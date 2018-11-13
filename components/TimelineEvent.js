@@ -54,11 +54,11 @@ class TimelineEvent extends Component {
 
   renderChildren() {
     const {collapsible, contentStyle} = this.props
-    return ((collapsible && this.state.showContent) || !collapsible) ?
-    <div style={this.mergeContentStyle(contentStyle)}>
-      {this.props.children}
-      <div style={s.messageAfter} />
-    </div> : <span style={{fontWeight: 500, fontSize: 16, cursor: 'pointer'}} onClick={this.toggleContent}>…</span>
+    return (
+      (collapsible && this.state.showContent) || !collapsible) ? <div style={this.mergeContentStyle(contentStyle)}>
+        {this.props.children}
+        <div style={s.messageAfter} />
+      </div> : <span style={{fontWeight: 500, fontSize: 16, cursor: 'pointer'}} onClick={this.toggleContent}>…</span>
   }
 
   render() {
